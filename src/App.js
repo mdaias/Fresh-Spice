@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
@@ -9,7 +10,6 @@ import Header from './pages/Shared/Header/Header';
 function App() {
   return (
     <div className="App">
-        <h1>Spice Warehouse</h1>
         <Header></Header>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
@@ -17,6 +17,7 @@ function App() {
           <Route path='/registration'element={<Registration></Registration>}></Route>
         </Routes>
         <Footer></Footer>
+        <ToastContainer></ToastContainer>
     </div>
   );
 }
