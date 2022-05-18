@@ -37,11 +37,11 @@ const SocialLogin = () => {
     return (
         <div>
             {errorElement}
-            <div class="flex flex-row items-center justify-center lg:justify-start">
-                <p class="text-lg mb-0 mr-4 font-bold">Sign in with</p>
+            <div className="flex flex-row items-center justify-center lg:justify-start">
+                <p className="text-lg mb-0 mr-4 font-bold">Sign in with</p>
                 <button
                     onClick={() => signInWithGoogle()}
-                    class="inline-block p-3 bg-sky-100 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                    className="inline-block p-3 bg-sky-100 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
                 >
 
                     <img style={{ width: '30px' }} src={google} alt="" />
@@ -49,7 +49,7 @@ const SocialLogin = () => {
                 </button>
 
                 <button
-                    class="inline-block p-3 bg-sky-100 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                    className="inline-block p-3 bg-sky-100 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
                 >
                     <img style={{ width: '30px' }} src={facebook} alt="" />
 
@@ -57,7 +57,7 @@ const SocialLogin = () => {
 
                 <button
                     onClick={() => signInWithGithub()}
-                    class="inline-block p-3 bg-sky-100 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                    className="inline-block p-3 bg-sky-100 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-300 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
                 >
                         <img style={{ width: '30px' }} src={github} alt="" />
                 </button>
