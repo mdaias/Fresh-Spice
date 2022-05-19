@@ -50,19 +50,23 @@ const Header = () => {
                         </ul>
                     </li>
                     <li><Link to='/'>Products</Link></li>
-                    <li><Link to='/inventories'>Manage Inventories</Link></li>
-                    <li><Link to='/addspice'>Add New Spice</Link></li>
-                    <li><Link to='/myitems'>My Items</Link></li>
+                    {
+                        user && <>
+                            <li><Link to='/inventories'>Manage Inventories</Link></li>
+                            <li><Link to='/addspice'>Add New Spice</Link></li>
+                            <li><Link to='/myitems'>My Items</Link></li>
+                        </>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
                 {
-                    user?
-                    <NavLink onClick={handleLogout} to=''>Logout</NavLink>
-                    :
-                    <NavLink to='/login'>Login</NavLink>
+                    user ?
+                        <NavLink onClick={handleLogout} to=''>Logout</NavLink>
+                        :
+                        <NavLink to='/login'>Login</NavLink>
                 }
-                
+
             </div>
         </div>
     );
