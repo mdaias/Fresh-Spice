@@ -48,7 +48,7 @@ const ProductDetails = () => {
                     <form onClick={handleRestock} className='flex justify-center items-center mx-auto'>
                         <input
                             type="number" name="number" placeholder='Restock Product Quentity'
-                            className='p-3 bad mx-3 w-[50%] shadow-lg'
+                            className='p-3 rounded-lg bad mx-3 w-[50%] shadow-lg'
                         />
                         <input
                             className='text-white cursor-pointer bg-orange-500 font-bold p-2 w-32 rounded-full'

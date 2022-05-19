@@ -18,7 +18,7 @@ const Product = ({ product }) => {
                 <h3 className='text-lg font-bold'>Weight: {weight} kg</h3>
                 <div className='flex justify-between'>
                     <h3 className='text-lg font-bold'>Price: {price} Tk</h3>
-                    <h3 className='text-lg font-bold '>Stock: {stock} kg</h3>
+                    <h3 className='text-lg font-bold '>Stock: {stock}</h3>
                 </div>
                 <h3 className='text-lg font-bold'>Supplier: <span className=' text-orange-600'>{supplier}</span> </h3>
                 <div className="card-actions justify-center">
