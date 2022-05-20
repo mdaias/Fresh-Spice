@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import AddNewSpice from './pages/AddNewSpice/AddNewSpice';
 import Blogs from './pages/Blogs/Blogs';
+import Gallery from './pages/Home/Gallery/Gallery';
 import Home from './pages/Home/Home/Home';
 import Product from './pages/Home/Product/Product';
 import ProductDetails from './pages/Home/ProductDetails/ProductDetails';
@@ -13,6 +14,7 @@ import ManageInventories from './pages/ManageInventories/ManageInventories';
 import MyItems from './pages/MyItems/MyItems';
 import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
+import NotFound from './pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -48,9 +50,11 @@ function App() {
         </Route>
 
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/gallery' element={<Gallery></Gallery>}></Route>
 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/registration' element={<Registration></Registration>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
