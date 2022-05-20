@@ -10,7 +10,7 @@ const Products = () => {
             <h3 className='text-xs md:text-3xl font-bold text-center md:mb-16 mb-10'>Our Products Guarantee A Healthy And Tasty Meal</h3>
             <div className='md:mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    products.map(product => <Product key={product._id} product={product}></Product>)
+                    products.slice(0,6).map(product => <Product key={product._id} product={product}></Product>)
                 }
             </div>
         </div>
