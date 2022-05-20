@@ -5,7 +5,6 @@ const AddNewSpice = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        // console.log(data);
         const url = `http://localhost:5000/product`;
         fetch(url, {
             method: 'POST',
@@ -16,7 +15,11 @@ const AddNewSpice = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                console.log(result)
+                // if(result.insertedId){
+                //     toast('Spice Item is successfully added')
+                //     data.rest()
+                // }
             })
     };
 

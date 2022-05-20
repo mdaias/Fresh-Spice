@@ -2,19 +2,33 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../../Hooks/useProducts';
 
+
 const ManageInventories = () => {
-    const [products] = useProducts();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const handleDelete = () => {
+   const [products, setProducts] = useProducts();
 
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure! delete this items?');
+        if (proceed) {
+            const url = `http://localhost:5000/product/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = products.filter(product => product._id !== id);
+                    setProducts(remaining);
+                })
+        }
     }
 
     return (
         <div>
             <div className='py-24 md:mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    products.map(product => <div className="card bg-base-100 shadow-xl">
+                    products.map(product => <div key={product._id} className="card bg-base-100 shadow-xl">
                         <figure><img src={product?.picture} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
@@ -29,7 +43,7 @@ const ManageInventories = () => {
                             </div>
                             <h3 className='text-lg font-bold'>Supplier: <span className=' text-orange-600'>{product?.supplier}</span> </h3>
                             <div className="card-actions justify-center">
-                                <button onClick={handleDelete} className='badge hover:text-white bg-slate-300 font-bold hover:bg-pink-500 cursor-pointer p-3 w-32 mt-5 badge-outline'>Delete</button>
+                                <button onClick={()=>handleDelete(product._id)} className='badge hover:text-white bg-slate-300 font-bold hover:bg-pink-500 cursor-pointer p-3 w-32 mt-5 badge-outline'>Delete</button>
                             </div>
                         </div>
                     </div>)
