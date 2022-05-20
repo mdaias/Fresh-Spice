@@ -11,31 +11,37 @@ const AddNewSpice = () => {
     const onSubmit = data => {
         console.log(data)
         const productData = {
-            email:user.email,
-            name:data.name,
-            price:data.price,
-            picture:data.picture,
-            stock:data.stock,
-            weight:data.weight,
-            supplier:data.supplier,
-            description:data.description    
+            email: user.email,
+            name: data.name,
+            price: data.price,
+            picture: data.picture,
+            stock: data.stock,
+            weight: data.weight,
+            supplier: data.supplier,
+            description: data.description
         }
         const url = `http://localhost:5000/product`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(productData)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result)
-                if (result.insertedId) {
-                    alert('Spice Item is successfully added')
-                    reset()
-                }
+        if (!data.stock < 0 && !data.price < 0) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(productData)
             })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result)
+                    if (result.insertedId) {
+                        alert('Spice Item is successfully added')
+                        reset()
+                    }
+                })
+        }
+        else{
+            alert('Please input a possitive amount of stock and price')
+            reset()
+        }
     };
 
     return (
@@ -48,7 +54,7 @@ const AddNewSpice = () => {
 
                 <form onSubmit={handleSubmit(onSubmit)} className='mx-10'>
 
-                    <input className='input block input-bordered text-xl font-bold input-info w-full mt-5' value={user?.email} disabled/>
+                    <input className='input block input-bordered text-xl font-bold input-info w-full mt-5' value={user?.email} disabled />
 
                     <input className='input input-bordered text-xl font-bold block input-info w-full mt-5' placeholder='Product Name' required {...register("name", { required: true, maxLength: 20 })} />
 

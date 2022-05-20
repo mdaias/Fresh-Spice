@@ -3,9 +3,9 @@ import React from 'react';
 const Gallery = () => {
     return (
         <div className=' my-10 md:my-24'>
-            <div className='font-bold text-center mb-12'>
+            <div className='font-bold text-center mb-12 mx-5'>
                 <h1 className='text-3xl md:text-5xl'><span className=' text-fuchsia-600'>Gallery </span> of Our Factory</h1>
-                <p className='text-lg w-1/3 mx-auto mt-10'>We are delivering our best quality product directly from indonesia farmer to you. We choose the best quality product fresh from our farmer</p>
+                <p className='text-lg md:w-1/3 mx-auto mt-10'>We are delivering our best quality product directly from indonesia farmer to you. We choose the best quality product fresh from our farmer</p>
             </div>
             <div className='grid md:grid-cols-4 grid:cols:1 gap-5 mx-5'>
                 <div className=' w-full h-60 shadow-lg'>

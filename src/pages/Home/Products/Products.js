@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import useProducts from '../../../Hooks/useProducts';
 import Product from '../Product/Product';
 
 const Products = () => {
     const [products] = useProducts();
+    const navigate = useNavigate();
 
     return (
         <div className='mt-10 md:mx-24 md:mt-20 mb-10'>
@@ -12,6 +14,9 @@ const Products = () => {
                 {
                     products.slice(0,6).map(product => <Product key={product._id} product={product}></Product>)
                 }
+            </div>
+            <div className='mb-6 mt-12 flex justify-center'>
+                <button onClick={() => navigate('/inventories')} className='text-white cursor-pointer bg-orange-500 font-bold p-2 w-80 mx-auto rounded-full'>Manage Inventories</button>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ const ProductDetails = () => {
 
     const navigate = useNavigate()
 
-    
+
 
     const { name, description, price, stock, picture, _id, supplier, weight } = product;
 
@@ -18,24 +18,31 @@ const ProductDetails = () => {
         // console.log(productId)
 
         const addStock = event.target.number.value
-        const updateStock = parseInt(stock) + parseInt(addStock);
-        console.log(updateStock)
 
-        // send data to the server
-        const url = `http://localhost:5000/product/${productId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ stock: updateStock })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                alert('users added successfully!!!');
-                event.target.reset();
-            });
+        if (addStock > 0) {
+            const updateStock = parseInt(stock) + parseInt(addStock);
+            console.log(updateStock)
+
+            // send data to the server
+            const url = `http://localhost:5000/product/${productId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ stock: updateStock })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    alert('users added successfully!!!');
+                    event.target.reset();
+                });
+        }
+        else {
+            alert('Please input a possitive number')
+            event.target.reset();
+        }
     }
 
 
@@ -57,7 +64,7 @@ const ProductDetails = () => {
             .then(data => {
                 console.log('success', data);
                 alert('Delivered successfully!!!');
-                
+
             });
     }
 
@@ -90,7 +97,7 @@ const ProductDetails = () => {
                 <div className='w-full mx-auto mt-10'>
                     <form onSubmit={handleRestock} className='flex justify-center items-center mx-auto'>
                         <input
-                            type="text" name="number" placeholder='Restock Product Quentity'
+                            type="number" name="number" placeholder='Restock Product Quentity'
                             className='p-3 rounded-lg bad mx-3 w-[50%] shadow-lg'
                         />
                         <input
