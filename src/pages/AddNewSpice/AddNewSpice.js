@@ -20,8 +20,8 @@ const AddNewSpice = () => {
             supplier: data.supplier,
             description: data.description
         }
-        const url = `http://localhost:5000/product`;
-        if (!data.stock < 0 && !data.price < 0) {
+        const url = `https://obscure-earth-95050.herokuapp.com/product`;
+        if(data.stock > 0 && data.price > 0) {
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -39,7 +39,7 @@ const AddNewSpice = () => {
                 })
         }
         else{
-            alert('Please input a possitive amount of stock and price')
+            alert('Please input a possitive amount of stock and prices')
             reset()
         }
     };

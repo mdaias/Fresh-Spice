@@ -11,7 +11,7 @@ const ManageInventories = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure! delete this items?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://obscure-earth-95050.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

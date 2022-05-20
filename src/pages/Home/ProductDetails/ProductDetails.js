@@ -24,7 +24,7 @@ const ProductDetails = () => {
             console.log(updateStock)
 
             // send data to the server
-            const url = `http://localhost:5000/product/${productId}`;
+            const url = `https://obscure-earth-95050.herokuapp.com/product/${productId}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -52,7 +52,7 @@ const ProductDetails = () => {
         console.log(updateStock)
 
         // send data to the server
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://obscure-earth-95050.herokuapp.com/product/${productId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

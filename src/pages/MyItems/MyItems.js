@@ -8,7 +8,7 @@ const MyItems = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/myproduct?email=${email}`
+        const url = `https://obscure-earth-95050.herokuapp.com/myproduct?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -21,7 +21,7 @@ const MyItems = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure! delete this items?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://obscure-earth-95050.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
