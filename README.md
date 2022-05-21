@@ -14,16 +14,16 @@ Open [https://spice-warehouse-8f352.firebaseapp.com/home](https://spice-warehous
 
 ### Package Which i use in this projects
 
-** 1: Firebase and React firebase hook
-   2: React Router
-   3: React toastyfy
-   4: Axios
-   5: tw-element   
-**
+1: Firebase and React firebase hook
+2: React Router
+3: React toastyfy
+4: Axios
+5: tw-element   
+
 
 ### FrameWork
 
-I use Tailwindcss in this projects [Fresh Spice](https://tailwindcss.com/docs/installation).
+I use Tailwindcss in this projects [Tailwindcss](https://tailwindcss.com/docs/installation).
 
 
 ### Short Description
