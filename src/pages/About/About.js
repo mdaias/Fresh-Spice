@@ -12,7 +12,7 @@ const About = () => {
                 <div class="card-body items-center justify-center">
                     <h2 class="card-title font-bold text-3xl md:text-5xl">I'm Mohammad Aias</h2>
                     <h3 className='md:text-3xl text-2xl font-semibold mt-5 md:mt-10'>Front-End Web Developer</h3>
-                    <p className='md:text-xl text-lg md:mt-10 mt-5 font-semibold'>My goal is work in any fast growing local or large multinational organization with immense responsibility. So that, my situational and transformational leadership style, problem solving, communication, language, and volunteering skills can be utilize efficiently to bring a positive change in the organization. In the long run I want to become a full stack web developer.</p>
+                    <p className='md:text-xl text-lg md:mt-10 mt-5 font-semibold'>My Goal is work in any fast growing local or large multinational organization with immense responsibility. So that, my situational and transformational leadership style, problem solving, communication, language, and volunteering skills can be utilize efficiently to bring a positive change in the organization. In the long run I want to become a full stack web developer.</p>
                     <div class="card-actions justify-center">
                         <button class="btn btn-primary">Facebook</button>
                     </div>
